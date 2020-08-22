@@ -13,7 +13,7 @@ script:
   - docker build -t tools-stash .
 
   # Test running the container.
-  - docker run --name test-container -d local/tools-stash
+  - docker run --name test-container -d tools-stash
 
   # Verify shell is available in the container.
   - docker exec --tty test-container uname -a
