@@ -17,4 +17,4 @@ RUN apk update \
 
 # ENTRYPOINT ["/docker-entrypoint.sh"]
 
-CMD ["bash"]
+CMD ["sleep", "9999"]
