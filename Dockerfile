@@ -1,6 +1,6 @@
 FROM alpine
 Label maintainer="Raymond Chiu"
-Label version="1.0"
+Label version="1.1"
 Label description="This is container with tools"
 
 # reference to praqma/network-multitool
@@ -12,7 +12,7 @@ RUN apk update \
 	perl-net-telnet procps rsync socat tcpdump tshark wget \
     && mkdir /certs \
     && chmod 700 /certs 
-    
-COPY docker-entrypoint.sh /
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+# COPY docker-entrypoint.sh /
+
+# ENTRYPOINT ["/docker-entrypoint.sh"]
