@@ -1,0 +1,19 @@
+---
+# reference from geerlingguy example
+services: docker
+
+before_install:
+  # Upgrade docker
+  - sudo apt-get update
+  # always new configuration file for dpkg to avoiding prompt
+  - sudo apt-get -y -o Dpkg::options::="--force-confnew" install docker-ce
+
+script:
+  # Test building Dockerfile
+  - docker build -t tools-stash .
+
+  # Test running the container.
+  - docker run --name test-container -d wmbone/tools-stash
+
+  # Verify shell is available in the container.
+  - docker exec --tty tools-stash uname -a
