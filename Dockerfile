@@ -16,3 +16,5 @@ RUN apk update \
 # COPY docker-entrypoint.sh /
 
 # ENTRYPOINT ["/docker-entrypoint.sh"]
+
+CMD ["bash"]
